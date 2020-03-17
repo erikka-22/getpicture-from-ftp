@@ -1,0 +1,4 @@
+GitPython
+html5lib
+python-dotenv
+requests
