@@ -33,16 +33,6 @@ DATA_DIR = '/path/to/the/dir'
 img_squareside_pixel = 700
 
 
-def put_ftp_pictures(pic_name, pic_path):
-    with ftplib.FTP_TLS(HOST_NAME) as ftps:
-        ftps.set_pasv("true")
-        ftps.login(USER_NAME, PASSWORD)
-        ftps.prot_p()
-        with open(pic_path, 'rb') as fp:
-            log = ftps.storbinary('STOR ' + FTPS_DATA_DIR + '/' + pic_name, fp)
-            print('[LOG] upload to ftp server ' + pic_name + ' ' + log)
-
-
 def get_local_pic_list():
     local_pictures = []
     file_paths = glob.glob(LOCAL_STORE_DIR + '*')
@@ -62,7 +52,8 @@ def get_ftp_pic_list():
         print(all_files)
         for file_name in all_files:
             extention = os.path.splitext(file_name)
-            if extention[1] == '.png':
+            if extention[1] == '.jpg':
+                # if extention[1] == '.png':
                 ftp_pictures.append(file_name)
         print('[LOG] get ftp picture list. there are ' +
               str(len(ftp_pictures)) + ' files')
@@ -151,6 +142,7 @@ def main():
             pic_to_circle(get_jpgfile_path(pic),
                           png_path)
             png_file_name = os.path.basename(png_path)
+            # 拡張子の手前までが必要なため:-4
             path_list.append(png_file_name[:-4])
 
     # 新たにダウンロードした画像のフルパス付きファイル名リスト
