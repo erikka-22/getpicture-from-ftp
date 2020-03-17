@@ -16,20 +16,19 @@ dotenv.load_dotenv(dotenv_path)
 
 
 # FTPSの情報
-HOST_NAME = "users698.lolipop.jp"
-USER_NAME = "main.jp-mdg-sandbox"
-PASSWORD = "vwD4uAL6BdbGQsGAAuoY"
-FTPS_DATA_DIR = "/elt2019/production"
+HOST_NAME = "hogehogehoge"
+USER_NAME = "hogehogehoge"
+PASSWORD = "hogehogehoge"
+FTPS_DATA_DIR = "/hoge/hoge"
 
 # 画像保存先ディレクトリ（フルパス）
-# LOCAL_STORE_DIR = '/Users/erika/Getpic_fromFTP/picture/'
-LOCAL_STORE_DIR = '/Users/erika/aftertaste/data/picture/'
+LOCAL_STORE_DIR = '/path/to/the/dir'
 # processingで読み込むための絶対パス付き画像名リスト
 path_list = []
 # 画像名リストのファイル
 LOCAL_STORE_FILE = "picture_name.csv"
 # 画像名リスト保存先ディレクトリ
-DATA_DIR = '/Users/erika/aftertaste/data/'
+DATA_DIR = '/path/to/the/dir'
 
 img_squareside_pixel = 700
 
